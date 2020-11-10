@@ -1,0 +1,291 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #404040;
+  line-height: 1.6;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+  grid-column-gap: 2em;
+}
+
+.header {
+    background: black;
+}
+
+.header-content {
+    display: flex;
+    grid-column: 2 / -2;
+}
+
+.header-home {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+}
+
+
+
+.logo-link {
+  background-color: #FFE600;
+  padding: 2em 0.5em 0;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #000;
+
+
+}
+
+.nav {
+  position: fixed;
+  background: #000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:100%;
+  width: 100%;
+  transform: translateX(0);
+  transition: transform 250ms;
+
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #FFE600;
+}
+
+.close-nav {
+  border: 0;
+  background: 0;
+  color: #FFE600;
+  font-weight: 700;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: .5em;
+  position: absolute;
+  right: 0;
+  transform: translateX(0);
+}
+
+.navigation-open {
+  transform: translateX(-100%);
+}
+
+.open-nav {
+    border: 0;
+    background: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: .5em;
+    margin-left: auto;
+    font-size: 1.5em;
+}
+
+h1, h2, strong {
+    font-weight: 700;
+}
+
+.accent-color {
+  color: #FFE600;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  color: #000;
+  margin-top: 1.4em;
+}
+
+.btn {
+  padding: .5em 1.75em;
+  font-weight: 700;
+  margin: .5em 0;
+  text-decoration: none;
+}
+
+.btn-primary {
+    background: #FFE600;
+    color: #000;
+    justify-self:start;
+
+}
+
+.btn-primary:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.hero {
+  display: grid;
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)), url(../images/motorcycles.jpg);
+  background-size: cover;
+  background-position: right;
+  color: #fff;
+  grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px)  minmax(1em, 1fr);
+  padding: 8em 0 4em;
+}
+
+.hero > * {
+  grid-column: 2 / -2;
+}
+
+.info {
+  padding: 4em 0;
+  text-align: center;
+
+}
+
+.col-1 {
+  grid-column: 2/-2;
+}
+
+.footer {
+  background: #ebebeb;
+  padding: 4em 0;
+  text-align: center;
+  }
+
+
+.footer > * {
+  grid-column: 2 / -2;
+}
+
+.social-links {
+  order: -1;
+
+}
+
+.social-link {
+  color: #000;
+  margin: 0 0.5em;
+  font-size: 1.5rem;
+}
+
+.social-link:hover {
+    color: #777;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em;
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+}
+.footer-logo, .footer-text, .footer-fineprint {
+  opacity: .4;
+}
+
+.footer-fineprint {
+  font-size: .75rem;
+  margin-top: 4em;
+}
+
+
+@media (min-width:400px) {
+  .hero > * {
+    margin-right: 20%;
+  }
+}
+
+
+@media (min-width: 680px) {
+
+  .main-grid {
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(180px, 320px)) minmax(1em, 1fr);
+  }
+
+  .hero {
+    padding: 6em 0;
+  }
+
+  .hero > * {
+    grid-column: 2 / span 2;
+  }
+
+  .col-1 {
+    grid-column: span 1;
+  }
+
+  .col-1:first-child {
+      grid-column: 2 / span 1;
+  }
+
+  .footer-main {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .social-links {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+
+  }
+
+  .open-nav,
+  .close-nav {
+    display:none;
+  }
+
+  .nav {
+    position: initial;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-end;
+
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .nav-item {
+    margin-left: 1em;
+  }
+
+  .header-home .nav {
+    background: transparent;
+  }
+
+}
